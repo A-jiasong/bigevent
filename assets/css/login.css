@@ -1,0 +1,51 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url('/assets/images/login_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+
+/* 将盒子居中显示 */
+
+.loginAndRegBox {
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* 标题图片的设置 */
+
+.title_box {
+    height: 60px;
+    background: url('/assets/images/login_title.png') no-repeat center;
+}
+
+
+/* 先将注册的盒子隐藏 */
+
+.reg_box {
+    display: none;
+}
+
+
+/* 将表单设置个内边距 */
+
+.layui-form {
+    padding: 0 30px;
+}
+
+
+/* 将连接设置在右下角 */
+
+.links {
+    text-align: right;
+}
