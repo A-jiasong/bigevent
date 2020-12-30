@@ -49,3 +49,24 @@ body {
 .links {
     text-align: right;
 }
+
+.links a {
+    font-size: 12px;
+}
+
+
+/* 将字体图标定位到输入框里面 */
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.layui-input {
+    padding-left: 32px;
+}
