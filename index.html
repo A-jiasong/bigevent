@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/fonts/iconfont.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
 <body class="layui-layout-body">
@@ -19,7 +21,8 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 个人中心
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span class="text-avatar"></span> 个人中心
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="">基本资料</a></dd>
@@ -27,29 +30,38 @@
                         <dd><a href="">重置密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">退出</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" id="btnLogout"><span class="iconfont icon-tuichu"></span>退出</a>
+                </li>
             </ul>
         </div>
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
+                <div class="userinfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+                    <span class="text-avatar"></span>
+                    <span id="welcome"></span>
+                </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-                <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item"><a href="">首页</a></li>
+                <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+                    <li class="layui-nav-item layui-this">
+                        <a href="/home/dashboard.html" target="fm"><span class="iconfont icon-home"></span>首页</a>
+                    </li>
                     <li class="layui-nav-item">
-                        <a class="" href="javascript:;">文章管理</a>
+                        <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">文章类别</a></dd>
-                            <dd><a href="javascript:;">文章列表</a></dd>
-                            <dd><a href="javascript:;">发表文章</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 文章类别</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 文章列表</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 发表文章</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="javascript:;">个人中心</a>
+                        <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">基本资料</a></dd>
-                            <dd><a href="javascript:;">更换头像</a></dd>
-                            <dd><a href="javascript:;">重置密码</a></dd>
+                            <dd><a href="/user/user_info.html" target="fm"><i class="layui-icon layui-icon-app"></i> 基本资料</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 更换头像</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 重置密码</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -58,7 +70,8 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <div style="padding: 15px;">内容主体区域</div>
+            <!-- 使用iframe标签在内容主体区域显示网页内容 -->
+            <iframe src="/home/dashboard.html" name="fm" frameborder="0"></iframe>
         </div>
 
         <div class="layui-footer">
@@ -67,6 +80,10 @@
         </div>
     </div>
     <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 导入地址拦截器，不用重复写地址前面部分 -->
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>
