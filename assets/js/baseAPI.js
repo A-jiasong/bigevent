@@ -1,7 +1,9 @@
 // 只要一调用ajax请求就会调用ajaxPrefilter这个函数
 $.ajaxPrefilter(function(options) {
     // 在发起真正的ajax请求之前，统一拼接请求的根路径
-    options.url = 'http://ajax.frontend.itheima.net' + options.url;
+    // options.url = 'http://ajax.frontend.itheima.net' + options.url;
+    options.url = 'http://127.0.0.1:3001' + options.url;
+
 
     // headers就是请求头配置对象
     if (options.url.indexOf('/my/') !== -1) {
